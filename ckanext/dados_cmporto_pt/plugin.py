@@ -11,8 +11,8 @@ import logging
 log = logging.getLogger(__name__)
 
 
-class BaselinePlugin(plugins.SingletonPlugin):
-    '''Theme for the dados.baseline portal
+class CMPortoPlugin(plugins.SingletonPlugin):
+    '''Theme for the dados.cmporto.pt portal
     '''
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IRoutes, inherit=True)
@@ -24,20 +24,20 @@ class BaselinePlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('public', 'dados_baseline')
+        toolkit.add_resource('public', 'dados_cmporto_pt')
 
     # IRoutes
     def before_map(self, map):
         """This IRoutes implementation overrides the standard
         ``/ckan-admin/config`` behaviour with a custom controller.
         """
-        map.connect('/ckan-admin/config', controller='ckanext.dados_baseline.controller:AdminController', action='config')
-        map.connect('/terms-of-use', controller='ckanext.dados_baseline.controller:StaticPagesController', action='terms_of_use')
-        map.connect('/privacy-policy', controller='ckanext.dados_baseline.controller:StaticPagesController', action='privacy_policy')
-        map.connect('/moderation-policy', controller='ckanext.dados_baseline.controller:StaticPagesController', action='moderation_policy')
-        map.connect('/license', controller='ckanext.dados_baseline.controller:StaticPagesController', action='list_license')
-        map.connect('linked_data', '/linked-data', controller='ckanext.dados_baseline.controller:StaticPagesController', action='linked_data')
-        map.connect('data_cubes', '/data-cubes', controller='ckanext.dados_baseline.controller:StaticPagesController', action='data_cubes')
+        map.connect('/ckan-admin/config', controller='ckanext.dados_cmporto_pt.controller:AdminController', action='config')
+        map.connect('/terms-of-use', controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='terms_of_use')
+        map.connect('/privacy-policy', controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='privacy_policy')
+        map.connect('/moderation-policy', controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='moderation_policy')
+        map.connect('/license', controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='list_license')
+        map.connect('linked_data', '/linked-data', controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='linked_data')
+        map.connect('data_cubes', '/data-cubes', controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='data_cubes')
         return map
 
     # IConfigurable

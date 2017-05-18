@@ -10,7 +10,7 @@ msgid "{0} statistics"
 msgstr "Estatísticas do portal"
 
 #
-# dados_baseline plugin
+# dados_cmporto_pt plugin
 #
 
 msgid "Linked Data"

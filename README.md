@@ -1,6 +1,6 @@
-# Baseline Data Portal
+# CMPorto Data Portal
 
-CKAN theme and extensions for the dadosabertos.baseline data portal. 
+CKAN theme and extensions for the dadosabertos.cm-porto.pt data portal. 
 
-Development by DevScope, based on CKAN 2.3.
+Development by ParadigmaXis, based on CKAN 2.3.
 

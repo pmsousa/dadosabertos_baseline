@@ -8,7 +8,7 @@ from ckan.model import Package
 class AdminController(admin.AdminController):
     def _get_config_form_items(self):
         items = super(AdminController, self)._get_config_form_items()
-        items[7]['options'].append({'value': '4', 'text': 'dados.baseline'})
+        items[7]['options'].append({'value': '4', 'text': 'dados.cm-porto.pt'})
         return items
 
 class StaticPagesController(base.BaseController):

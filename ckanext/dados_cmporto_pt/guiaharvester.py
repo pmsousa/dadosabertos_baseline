@@ -16,7 +16,7 @@ from dateutil.parser import _resultbase
 log = logging.getLogger(__name__)
 
 class GuiaHarvesterPlugin(CKANHarvester):
-    '''Harvester for Baseline's GUIA
+    '''Harvester for CMPorto's GUIA
     '''
     def info(self):
         return {

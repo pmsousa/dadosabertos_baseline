@@ -6,11 +6,11 @@
         {% block footer_nav %}
           <ul class="unstyled">
             {% block footer_links %}
-              <li><img class="tiny-logo" src="/img/icon-baseline.png" /><a href="http://www.devscope.net">{{ _('Baseline') }}</a></li>
+              <li><img class="tiny-logo" src="/img/icon-cmp.png" /><a href="http://www.cm-porto.pt">{{ _('Câmara Municipal do Porto') }}</a></li>
               <li><a href="{{ h.url_for(controller='home', action='about') }}">{{ _('Sobre o Portal') }}</a></li>
-              <li><a href="{{ h.url_for(controller='ckanext.dados_baseline.controller:StaticPagesController', action='terms_of_use') }}">{{ _('Termos de Utilização') }}</a></li>
-              <li><a href="{{ h.url_for(controller='ckanext.dados_baseline.controller:StaticPagesController', action='privacy_policy') }}">{{ _('Política de Privacidade') }}</a></li>
-              {# <li><a href="{{ h.url_for(controller='ckanext.dados_baseline.controller:StaticPagesController', action='moderation_policy') }}">{{ _('Política de Moderação') }}</a></li> #}
+              <li><a href="{{ h.url_for(controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='terms_of_use') }}">{{ _('Termos de Utilização') }}</a></li>
+              <li><a href="{{ h.url_for(controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='privacy_policy') }}">{{ _('Política de Privacidade') }}</a></li>
+              {# <li><a href="{{ h.url_for(controller='ckanext.dados_cmporto_pt.controller:StaticPagesController', action='moderation_policy') }}">{{ _('Política de Moderação') }}</a></li> #}
             {% endblock %}
           </ul>
           <ul class="unstyled">
