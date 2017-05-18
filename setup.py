@@ -9,22 +9,22 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='''ckanext-dados_cmporto_pt''',
+    name='''ckanext-dados_baseline''',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='0.0.1',
 
-    description='''dadosabertos.cm-porto.pt''',
+    description='''dadosabertos.baseline''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/ParadigmaXis/ckanext-dados_cmporto_pt',
+    url='https://github.com/pmsousa/dadosabertos_baseline',
 
     # Author details
-    author='''ParadigmaXis''',
-    author_email='''mail@ParadigmaXis.pt''',
+    author='''DevScope''',
+    author_email='''ithelpdesk@devscope.net''',
 
     # Choose your license
     license='AGPL',
@@ -77,10 +77,10 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        cmporto=ckanext.dados_cmporto_pt.plugin:CMPortoPlugin
-        cmporto_relationships=ckanext.dados_cmporto_pt.relationships_plugin:RelationshipsPlugin
-        cmporto_catalog_overview=ckanext.dados_cmporto_pt.catalog_overview_plugin:CatalogOverviewPlugin
-        guia_harvester=ckanext.dados_cmporto_pt.guiaharvester:GuiaHarvesterPlugin
-        shapefile_view=ckanext.dados_cmporto_pt.shapefile:ShapefilePlugin
+        baseline=ckanext.baseline.plugin:BaselinePlugin
+        baseline_relationships=ckanext.dados_baseline.relationships_plugin:RelationshipsPlugin
+        baseline_catalog_overview=ckanext.dados_baseline.catalog_overview_plugin:CatalogOverviewPlugin
+        guia_harvester=ckanext.dados_baseline.guiaharvester:GuiaHarvesterPlugin
+        shapefile_view=ckanext.dados_baseline.shapefile:ShapefilePlugin
     ''',
 )

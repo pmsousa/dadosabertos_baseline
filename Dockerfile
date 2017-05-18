@@ -44,8 +44,8 @@ RUN ln -s /usr/pgsql-9.4/bin/* /usr/local/bin/; \
     $APP_HOME/bin/pip install setuptools==18.5 --upgrade; \
     $APP_HOME/bin/pip install -r $APP_HOME/src/ckanext-dcat/requirements.txt
 
-# Add dados_cmporto_pt plugin
-ADD . $APP_HOME/src/ckan/ckanext-dados_cmporto_pt
+# Add dados_baseline plugin
+ADD . $APP_HOME/src/ckan/ckanext-baseline
 
 # Set configurations
 # Removed mkdir instruction
@@ -58,7 +58,7 @@ RUN "$APP_HOME"/bin/paster --plugin=ckan config-tool "$CKAN_CONFIG/$CONFIG_FILE"
       "ckan.auth.user_create_organizations             = false" \
       "ckan.auth.user_delete_groups                    = false" \
       "ckan.auth.user_delete_organizations             = false" \
-      "ckan.plugins                                    = dcat dcat_json_interface datapusher datastore disqus resource_proxy text_view image_view recline_view pdf_view stats geo_view shapefile_view harvest cmporto guia_harvester cmporto_relationships cmporto_catalog_overview" \
+      "ckan.plugins                                    = dcat dcat_json_interface datapusher datastore disqus resource_proxy text_view image_view recline_view pdf_view stats geo_view shapefile_view harvest baseline guia_harvester baseline_relationships baseline_catalog_overview" \
       "ckan.favicon                                    = /img/icon-cmp-blue.png" \
       "ckan.locale_default                             = pt_PT" \
       "ckan.locale_order                               = pt_PT" \
@@ -68,12 +68,12 @@ RUN "$APP_HOME"/bin/paster --plugin=ckan config-tool "$CKAN_CONFIG/$CONFIG_FILE"
     "$APP_HOME"/bin/paster --plugin=ckan config-tool "$CKAN_CONFIG/$CONFIG_FILE" \
       "package_hide_extras                             = identificacao_responsavel_fornecedor responsavel_editor_nome responsavel_editor_email responsavel_editor_telefone responsavel_editor_und_organica  responsavel_tutor_nome responsavel_tutor_email responsavel_tutor_telefone responsavel_tutor_und_organica restricoes_acesso_interno limitacoes publicar_exterior limitacoes_fornecimento_externo  principais_utilizadores dataset_data_atualizacao dataset_data_criacao origem_geometria notas_metodologicas" \
       "ckan.storage_path                               = $STORE_PATH" \
-      "ckan.i18n_directory                             = $APP_HOME/src/ckan/ckanext-dados_cmporto_pt/ckanext/dados_cmporto_pt" \
+      "ckan.i18n_directory                             = $APP_HOME/src/ckan/ckanext-baseline/ckanext/dados_baseline" \
       "ckan.tracking_enabled                           = true" \
       "ckan.search.show_all_types                      = true" \
       "ckanext.geo_view.ol_viewer                      = wms" \
       "package_edit_return_url                         = /dataset/<NAME>"; \
-    cd $APP_HOME/src/ckan/ckanext-dados_cmporto_pt && "$APP_HOME"/bin/python setup.py develop; \
+    cd $APP_HOME/src/ckan/ckanext-baseline && "$APP_HOME"/bin/python setup.py develop; \
     ln -s $APP_HOME/src/ckan/ckan/config/who.ini $CKAN_CONFIG/who.ini
 
 # Add APP Settings
